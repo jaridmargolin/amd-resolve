@@ -1,6 +1,6 @@
 {
   "name": "amd-resolve",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A hookable AMD module resolution implementation.",
   "keywords": ["modules", "require", "resolve", "amd", "requirejs"],
   "repository": {
