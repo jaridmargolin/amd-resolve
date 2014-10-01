@@ -80,28 +80,24 @@ describe('resolve.sync', function() {
     }
     
     it('should map some/newmodule require foo to foo1.2', function() {
-      resolve.sync('foo', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                            parentID: 'some/newmodule', map: map,
-                            isFile: isFile })
+      resolve.sync('foo', { baseDir: '/www/modules', relDir: 'some/newmodule',
+                            map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.2.js');
     })
     it('should map some/newmodule require foo/bar to foo1.2', function() {
-      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                                parentID: 'some/newmodule', map: map,
-                                isFile: isFile })
+      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: 'some/newmodule',
+                                map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.2/bar.js');
     })
     
     it('should map some/oldmodule require foo to foo1.0', function() {
-      resolve.sync('foo', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                            parentID: 'some/oldmodule', map: map,
-                            isFile: isFile })
+      resolve.sync('foo', { baseDir: '/www/modules', relDir: 'some/oldmodule',
+                            map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.0.js');
     })
     it('should map some/oldmodule require foo/bar to foo1.0', function() {
-      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                                parentID: 'some/oldmodule', map: map,
-                                isFile: isFile })
+      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: 'some/oldmodule',
+                                map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.0/bar.js');
     })
   })
@@ -118,21 +114,18 @@ describe('resolve.sync', function() {
     }
     
     it('should map some/newmodule require foo to foo2', function() {
-      resolve.sync('foo', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                            parentID: 'some/newmodule', map: map,
-                            isFile: isFile })
+      resolve.sync('foo', { baseDir: '/www/modules', relDir: 'some/newmodule',
+                            map: map, isFile: isFile })
         .should.equal('/www/modules/foo2.js');
     })
     it('should map some/newmodule require foo/bar to foo1.2/bar3', function() {
-      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                                parentID: 'some/newmodule', map: map,
-                                isFile: isFile })
+      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: 'some/newmodule', 
+                                map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.2/bar3.js');
     })
     it('should map some/oldmodule require foo/bar/baz to foo1.0/bar/baz2', function() {
-      resolve.sync('foo/bar/baz', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                                    parentID: 'some/oldmodule', map: map,
-                                    isFile: isFile })
+      resolve.sync('foo/bar/baz', { baseDir: '/www/modules', relDir: 'some/oldmodule',
+                                    map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.0/bar/baz2.js');
     })
   })
@@ -149,21 +142,18 @@ describe('resolve.sync', function() {
     }
     
     it('should map some/newmodule require foo to foo2', function() {
-      resolve.sync('foo', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                            parentID: 'some/newmodule', map: map,
-                            isFile: isFile })
+      resolve.sync('foo', { baseDir: '/www/modules', relDir: 'some/newmodule',
+                            map: map, isFile: isFile })
         .should.equal('/www/modules/foo2.js');
     })
     it('should map some/newmodule require foo/bar to foo1.2/bar3', function() {
-      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                                parentID: 'some/newmodule', map: map,
-                                isFile: isFile })
+      resolve.sync('foo/bar', { baseDir: '/www/modules', relDir: 'some/newmodule',
+                                map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.2/bar3.js');
     })
     it('should map some/oldmodule require foo/bar/baz to foo1.0/bar/baz2', function() {
-      resolve.sync('foo/bar/baz', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                                    parentID: 'some/oldmodule', map: map,
-                                    isFile: isFile })
+      resolve.sync('foo/bar/baz', { baseDir: '/www/modules', relDir: 'some/oldmodule',
+                                    map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.0/bar/baz2.js');
     })
   })
@@ -179,16 +169,14 @@ describe('resolve.sync', function() {
     }
     
     it('should map some/othermodule require foo to foo1.2', function() {
-      resolve.sync('foo', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                            parentID: 'some/othermodule', map: map,
-                            isFile: isFile })
+      resolve.sync('foo', { baseDir: '/www/modules', relDir: 'some/othermodule',
+                            map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.2.js');
     })
     
     it('should map some/oldmodule require foo to foo1.0', function() {
-      resolve.sync('foo', { baseDir: '/www/modules', relDir: '/www/app/foo',
-                            parentID: 'some/oldmodule', map: map,
-                            isFile: isFile })
+      resolve.sync('foo', { baseDir: '/www/modules', relDir: 'some/oldmodule',
+                            map: map, isFile: isFile })
         .should.equal('/www/modules/foo1.0.js');
     })
   })
